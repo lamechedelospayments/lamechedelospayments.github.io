@@ -15,6 +15,68 @@
   {% endif %}
 {% endfor %}
 
+.main-nav {
+  padding: 1rem;
+  background: #111;
+  color: #fff;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  li {
+    position: relative;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      padding: 0.5rem;
+      display: block;
+    }
+
+    &:hover .dropdown-content {
+      display: block;
+    }
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background: #222;
+    border: 1px solid #444;
+    top: 100%;
+    left: 0;
+    padding: 0.5rem 0;
+    z-index: 1000;
+    min-width: 180px;
+
+    li {
+      padding: 0;
+      margin: 0;
+    }
+
+    li a {
+      padding: 0.5rem 1rem;
+      color: #fff;
+    }
+
+    li a:hover {
+      background-color: #333;
+    }
+  }
+
+  .search-icon a {
+    font-size: 1.2rem;
+  }
+}
+
 /* Basic elements */
 body {
   background: #f0f0f0;
@@ -110,7 +172,7 @@ tr {
 /* Header */
 .header {
   /* Fake a dark overlay with a gradient. Black is black... I want my sanity back... */
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/background.jpg') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/background.png') no-repeat center center;
   background-size: cover;
   min-height: 100vh;
   padding: 0;

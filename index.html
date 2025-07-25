@@ -1,36 +1,46 @@
 ---
 layout: default
 ---
-<section class="tone-dark header">
-  <img class="logo"
-       src="images/logo.svg"
-       alt="{{ site.data.info.name }}">
-  <p>
-    {{ site.data.info.date }}
-    <br>
-    {{ site.data.info.location }}
-  </p>
-  {% if site.data.action.text %}
-    <p>
-      {% if site.data.action.link %}
-        <a class="tone-dark link-action"
-           href="{{ site.data.action.link }}"
-           rel="noreferrer">{{ site.data.action.text | markdownify | remove: '<p>' | remove: '</p>' }}</a>
-      {% else %}
-        {{ site.data.action.text | markdownify }}
-      {% endif %}
-    </p>
-  {% endif %}
+<nav class="main-nav tone-dark">
+  <ul>
+    <li><a href="/">Home</a></li>
 
-  <p>
-    Follow us on <a href="https://facebook.com/{{ site.data.info.facebook }}"
-                    rel="noreferrer">Facebook</a>
-    {% if site.data.info.twitter %}
-      and <a href="https://twitter.com/{{ site.data.info.twitter }}"
-             rel="noreferrer">Twitter</a>
-    {% endif %}
-    for updates!
-  </p>
+    <li class="dropdown">
+      <a href="#">Events</a>
+      <ul class="dropdown-content">
+        <li><a href="/events/pwnedcon2025">DEF CON</a></li>
+        <li><a href="/events/bugcon2025">Other Events</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/resources">Resources</a></li>
+
+    <li class="dropdown">
+      <a href="#">Hardware</a>
+      <ul class="dropdown-content">
+        <li><a href="/hardware/chameleon">Chameleon</a></li>
+        <li><a href="/hardware/proxmark">Proxmark</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/news">News</a></li>
+
+    <li class="dropdown">
+      <a href="#">Get Involved</a>
+      <ul class="dropdown-content">
+        <li><a href="/contribute">Contribute</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </li>
+
+    <li class="search-icon">
+      <a href="/search"><i class="fa fa-search"></i></a>
+    </li>
+  </ul>
+</nav>
+
+<section class="tone-dark header">
 </section>
 <section class="tone-dark">
   <div>

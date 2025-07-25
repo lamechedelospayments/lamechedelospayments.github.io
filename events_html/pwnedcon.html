@@ -1,0 +1,124 @@
+---
+layout: default
+title: Pwnedcon 2025
+permalink: /events/pwnedcon2025/
+---
+
+<nav class="main-nav tone-dark">
+  <ul>
+    <li><a href="/">Home</a></li>
+
+    <li class="dropdown">
+      <a href="#">Events</a>
+      <ul class="dropdown-content">
+        <li><a href="/events/pwnedcon2025">DEF CON</a></li>
+        <li><a href="/events/bugcon2025">Other Events</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/resources">Resources</a></li>
+
+    <li class="dropdown">
+      <a href="#">Hardware</a>
+      <ul class="dropdown-content">
+        <li><a href="/hardware/chameleon">Chameleon</a></li>
+        <li><a href="/hardware/proxmark">Proxmark</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/news">News</a></li>
+
+    <li class="dropdown">
+      <a href="#">Get Involved</a>
+      <ul class="dropdown-content">
+        <li><a href="/contribute">Contribute</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </li>
+
+    <li class="search-icon">
+      <a href="/search"><i class="fa fa-search"></i></a>
+    </li>
+  </ul>
+</nav>
+
+<section class="tone-light" style="margin-top: 2rem; padding: 2rem 1rem;">
+  <div>
+    {{ site.data.info.description_long | markdownify }}
+
+    {% if site.data.workshops %}
+      <p>
+        We also organize <a href="/workshops">{{ site.data.workshops.name }}</a>.
+      </p>
+    {% endif %}
+
+    {% if site.data.info.past_editions %}
+      <p>
+        Check out the past editions:
+        {% for edition in site.data.info.past_editions %}
+          <a href="{{ edition[1] }}">{{ edition[0] }}</a>
+        {% endfor %}
+      </p>
+    {% endif %}
+
+    <p>
+      Please keep in mind our <a href="/pdf/rules.pdf">rules</a>.
+    </p>
+  </div>
+</section>
+
+{% if site.data.schedule %}
+  <section id="schedule">
+    <h1>Schedule</h1>
+    <div class="items-container">
+      {% for part in site.data.schedule %}
+        <div class="item-large">
+          <table>
+            {% if part[0] != '' %}
+              <tr>
+                <th colspan="2">
+                  <h2>{{ part[0] }}</h2>
+                </th>
+              </tr>
+            {% endif %}
+            {% for item in part[1] %}
+              <tr>
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% if site.data.faq %}
+  <section>
+    <h1 id="faq">F.A.Q.</h1>
+    <div class="items-container">
+      {% for item in site.data.faq %}
+        <div class="item-large">
+          <h2 {% if item.id %} id="{{ item.id }}" {% endif %}>{{ item.q }}</h2>
+          <p>{{ item.a | markdownify }}</p>
+        </div>
+      {% endfor %}
+      <div class="item-large">
+        <h2>I have another question...</h2>
+        <p>Contact us on <a href="https://facebook.com/{{ site.data.info.facebook }}" rel="noreferrer">Facebook</a>,
+          {% if site.data.info.twitter %}
+            on <a href="https://twitter.com/{{ site.data.info.twitter }}" rel="noreferrer">Twitter</a>,
+          {% endif %}
+          <br>
+          or by email ({{ site.data.info.email }})!
+        </p>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<section class="tone-dark">
+  <p>Website template made with love by <a href="https://lauzhack.com">LauzHack</a>.</p>
+</section>
