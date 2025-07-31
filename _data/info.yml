@@ -2,13 +2,13 @@
 name: La Meche de los Payments
 
 # Event date, in free-text format
-date: February 30-31
+date: November 20-21
 
 # Event location
-location: Building 01, Example University
+location: Mexico City, Mexico
 
 # Event description; short is for e.g. Facebook shared links, long appears on the home page.
-description_short: Student-run hackathon at EPFL, Switzerland
+description_short: Payment village for events en latam america
 description_long: |-
   <h1>Call for papers is open!!!</h1>
 
