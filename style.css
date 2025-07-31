@@ -174,7 +174,7 @@ tr {
   /* Fake a dark overlay with a gradient. Black is black... I want my sanity back... */
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/background.png') no-repeat center center;
   background-size: cover;
-  min-height: 100vh;
+  min-height: 55vh;
   padding: 0;
 }
 

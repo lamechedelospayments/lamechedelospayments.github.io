@@ -10,11 +10,7 @@ location: Building 01, Example University
 # Event description; short is for e.g. Facebook shared links, long appears on the home page.
 description_short: Student-run hackathon at EPFL, Switzerland
 description_long: |-
-  This is an example event for this template!
-
-  It's there to show off the capabilities of the template.
-
-  No coding needed, just change the data!
+  <h1>Call for papers is open!!!</h1>
 
 # Contact email. Use a bot-defeating format, otherwise you'll get spammed.
 email: info at example dot org
@@ -30,8 +26,3 @@ color: '#6497b1'
 # To use a custom font, see the ReadMe file.
 # If using a custom font, this value will be used as fallback.
 font: Courier, monospace
-
-# Links to past editions
-past_editions:
-  2010: http://2010.example.org
-  2000: http://2000.example.org

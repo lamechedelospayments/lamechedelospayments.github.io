@@ -7,13 +7,17 @@
 
 - q: What is this?
   a: |- 
-        An example website for this template.  
-        Isn't it awesome?
+        BugCON Security Conference: Safety is just a myth...! a highly technical security conference in Mexico,
+        since 2008 one of the favorites annual meeting points for the hacking and security researchers, students, professionals and companies.
 
-- q: Can I use it?
+- q: How much does it cost?
   a: |-
-        Of course! Just comply with the license, i.e. credit the authors.
+        Amounts and conditions <a href="#">Here</a>
+
+- q: When?
+  a: |-
+      BugCON 2025 will take place in Mexico City, from November 20th and 21st, 2025
 
 - q: Thank you!
   a: |-
-        You're welcome!
+      You're welcome! 
