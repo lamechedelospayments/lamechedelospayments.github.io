@@ -34,14 +34,14 @@ permalink: /events/pwnedcon2025/
       El escenario busca enseñar cómo pequeños descuidos en la validación pueden convertirse en grandes riesgos.
     </p>
 
-    <h3 style="color:#a855f7; margin-top: 1.5rem;">💳 Magstripe: la vieja confiable</h3>
+    <h3 style="color:#a855f7; margin-top: 1.5rem;">💳 Magstripe</h3>
     <p style="color:#000000;">Un espacio dedicado a la banda magnética de las tarjetas, donde veremos:</p>
     <ul style="color:#000000;">
       <li>Cómo se estructura y almacena la información.</li>
       <li>Demostraciones con ejemplos curiosos e interesantes 😉.</li>
     </ul>
 
-    <h3 style="color:#a855f7; margin-top: 1.5rem;">📡 NFC y RFID en acción</h3>
+    <h3 style="color:#a855f7; margin-top: 1.5rem;">📡 NFC y RFID</h3>
     <p style="color:#000000;">Con el uso de hardware especializado aprenderás a:</p>
     <ul style="color:#000000;">
       <li>Leer tarjetas contactless.</li>
@@ -56,9 +56,8 @@ permalink: /events/pwnedcon2025/
 
     <h4 style="color:#f472b6; margin-top: 1rem;">🔐 Temáticas principales del CTF</h4>
     <ul style="color:#000000;">
-      <li>Aplicaciones móviles: Retos enfocados en protocolos y configuraciones que suelen encontrarse en sistemas de mPOS.</li>
-      <li>Seguridad en pagos: Escenarios donde se explorarán vulnerabilidades en cobros, transferencias y validaciones de transacciones.</li>
-      <li>Web y lógica de negocio: Desafíos que exponen problemas como inyecciones, validaciones incompletas, manipulación de parámetros y <em>race conditions</em>.</li>
+      <li>Aplicaciones móviles mPOS</li>
+      <li>Web y lógica de negocio</li>
     </ul>
 
     <h4 style="color:#f472b6; margin-top: 1rem;">🎯 Objetivo</h4>
@@ -74,12 +73,69 @@ permalink: /events/pwnedcon2025/
 	  <li>Burpsuite</li>
 	  <li>Y... muchas ganas de reventar el mundo</li>
 	</ul>
-
+	<p style="color:#000000; margin-top: 0.5rem;">
+	  <b>Para poder optar a los premios</b> deben estar presencialmente en el evento y únicamente para el público de la conferencia.  
+	</p>
     <p style="margin-top: 1.5rem; color:#000000;">
       ⚡ Prepárate para retar tus conocimientos y descubrir nuevas formas de pensar en seguridad aplicada a los sistemas de pago.
     </p>
+    
+    <p style="color:#000000;">
+  	El CTF abre el <b>Lunes 22 de septiembre de 2025 a las 0:00 hrs</b> y cierra el <b>Miércoles 24 de septiembre a las 3:00 pm</b>.
+  	<br />
+  	<br />
+	<div style="text-align:center;">
+	  <a href="https://ctf.lamechedelospayments.org/" 
+	     style="display:inline-block; margin-top:1rem; padding:0.75rem 1.5rem; background-color:#22d3ee; color:#ffffff; font-weight:bold; border-radius:0.5rem; text-decoration:none; transition:all 0.3s ease-in-out;"
+	     onmouseover="this.style.backgroundColor='#0ea5e9'; this.style.transform='scale(1.05)';"
+	     onmouseout="this.style.backgroundColor='#22d3ee'; this.style.transform='scale(1)';">
+	     🔗 Registro
+	  </a>
+	</div>
+
+   </p>
+    
   </div>
 </section>
+
+{% if site.data.sponsors %}
+  <section class="section-sponsors">
+ 
+    {% for tier in site.data.sponsors.tiers %}
+      {% if tier[1].show_title %}
+        <h1>{{ tier[0] }}</h1>
+      {% endif %}
+
+      {% if tier[1].sponsors %}
+        <div class="items-container"
+             {% if tier[1].color %} style="background: {{ tier[1].color }}" {% endif %}>
+          {% for sponsor in tier[1].sponsors %}
+            {% comment %} Use SVG if available, PNG otherwise {% endcomment %}
+            {% assign file_img = 'null' %}
+            {% assign file_svg_path = sponsor[0] | prepend: '/images/logos/' | append: '.svg' %}
+            {% for file in site.static_files %}
+              {% if file.path == file_svg_path %}
+                {% assign file_img = file_svg_path %}
+              {% endif %}
+            {% endfor %}
+            {% if file_img == 'null' %}
+              {% assign file_img = sponsor[0] | prepend: '/images/logos/' | append: '.png' %}
+            {% endif %}
+
+            <div class="item-large">
+              <a href="{{ sponsor[1] }}"
+                 rel="noreferrer">
+                 <img src="{{ file_img }}"
+                      alt="{{ tier[0] }} - {{ sponsor[0] }}"
+                      style="height: {{ tier[1].size }}vh">
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </section>
+{% endif %}
 
 {% if site.data.faqpnwed%}
   <section>
