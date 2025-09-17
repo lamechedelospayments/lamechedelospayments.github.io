@@ -7,23 +7,9 @@ show_prospectus: true
 # Each sponsor has a link to its website.
 # See the ReadMe file for information about logos.
 tiers:
-  Partners:
+  Community Sponsors:
     show_title: true
     size: 30
     sponsors:
-      Example University: http://example.org
-
-  Gold Sponsors:
-    show_title: true
-    color: rgba(212,175,55,0.12)
-    size: 42
-    sponsors:
-      Gold Example One: http://example.org
-      Gold Example Two: http://example.org
-
-  Silver Sponsors:
-    show_title: true
-    color: rgba(192,192,192,0.18)
-    size: 32
-    sponsors:
-      Silver Example One: http://example.org
+      pwnlabmx: https://pwnlab.mx/
+      electroniccats: https://electroniccats.com/
