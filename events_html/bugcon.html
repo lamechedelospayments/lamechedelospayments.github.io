@@ -3,66 +3,70 @@ layout: default
 title: Bugcon 2025
 permalink: /events/bugcon2025/
 ---
-  <style>
-    .des {
-      font-weight: bold;
-      font-size: 24px;
-      color: #ff4081;
-      animation: check 2s infinite alternate;
+
+<script>
+  const speakerData = {
+    speaker1: {
+      name: "Cesar Calderon",
+      talk: "PAYGoat: Playing with Broken Money Flows & EMV 101",
+      talkinfo: "PAYGoat: Si bien la mayoría de las pruebas de seguridad se centran en problemas técnicos comunes como XSS o SQLi, las vulnerabilidades de la lógica de negocio siguen siendo uno de los riesgos más subestimados y peligrosos en las aplicaciones del mundo real. Estas fallas no rompen el sistema, sino cómo debería funcionar.\n\nEn esta charla, exploraremos el mundo de los errores de lógica de negocio a través de escenarios prácticos utilizando PAYGoat, una plataforma bancaria deliberadamente vulnerable que creé. Veremos ejemplos como acciones de cuenta no autorizadas, abuso de flujos de transferencia y omisiones debido a suposiciones deficientes en el diseño de control.\n\nTanto si es un desarrollador, un cazador de recompensas por errores o un profesional de la seguridad, esta sesión pondrá a prueba su comprensión de la seguridad por diseño y le mostrará cómo los errores lógicos sutiles pueden dar lugar a rutas de explotación críticas.",
+      talkinfo2: "EMV 101: Una introducción clara y práctica al estándar EMV: cómo funcionan las tarjetas con chip, el flujo de una transacción, los elementos criptográficos involucrados y los mecanismos que permiten autenticar y validar operaciones de forma segura. Se explican los conceptos esenciales para comprender el ecosistema de pagos con chip, así como los vectores de ataque más comunes en implementaciones reales.",
+      bio: "Consultor de Seguridad en Websec México, cuenta con varios años de experiencia en el campo de la seguridad, con habilidades en red teaming, auditoria de aplicaciones web, auditoria de redes inalámbricas, infraestructura, auditorias cloud, análisis de lógica de negocio en aplicaciones transaccionales, evaluación de vulnerabilidades en APIs (REST, GraphQL, SOAP, gRPC) y explotación de escenarios NFC/Bluetooth. También ha trabajado en la creación de entornos CTF, desafíos de lógica de negocio, y presentando varias conferencias en los eventos de Ekoparty, Bugcon, Bsides Pánama, DOJOConf, Pwn3d!Con.",
+      twitter: "https://x.com/__stux",
+      linkedin: "https://www.linkedin.com/in/stuxnet/"
+    },
+    speaker2: {
+      name: "Ivan Morales",
+      talk: "Seguridad desde dia Cero - Security on Day One (Threat Modeling)",
+      talkinfo: "En esta presentación abordaremos el estándar PCI Secure Software Framework (PCI-SSF) del PCI Security Standards Council, analizando los requisitos de seguridad que cubre el estándar y su aplicación práctica en el desarrollo de software seguro para sistemas de pago.  Nos enfocaremos especialmente en la práctica del Threat Modeling (modelo de amenazas), un elemento clave exigido por la norma para garantizar un diseño seguro desde las etapas iniciales del ciclo de vida del software.  Además, revisaremos ejemplos prácticos y buenas prácticas que cumplen con lo establecido por el estándar, describiendo cómo estos controles y metodologías contribuyen a proteger los datos sensibles del tarjetahabiente y las operaciones de pago.",
+      bio: "Consultor en seguridad de tecnologías de la información y la ciberseguridad. Cuento con una trayectoria consolidada en consultoría, auditorías de seguridad, análisis de riesgos e implementación de controles basados en estándares internacionales, tales como ISO 27001/27002, OWASP SAMM, COBIT 5, ITIL, PCI-DSS e ISO 31000. A lo largo de mi trayectoria profesional, he tenido la oportunidad de participar en el diseño, despliegue y gestión de Sistemas de Gestión de Seguridad de la Información (SGSI) y PCI-DSS, SSS, adicionalmente experiencia técnica en pruebas de seguridad pentesting, análisis de vulnerabilidades, revisiónes de código estatico y validacion de arquitecturas seguras. Además, he tenido la oportunidad de impartir programas de capacitación en desarrollo seguro.",
+      twitter: "#",
+      linkedin: "#"
+    },
+    speaker3: {
+      name: "Axel Amézquita, Rodrigo Parra",
+      talk: "Seguridad desde dia Cero - Security on Day One (Threat Modeling)",
+      talkinfo: "La automatización se ha consolidado como un pilar fundamental para escalar las operaciones de un Centro de Seguridad (SOC), permitiendo la ejecución de tareas repetitivas con precisión y velocidad. Esta charla explorará estrategias prácticas para implementar flujos de trabajo automatizados que generen y distribuyan reportes críticos de manera proactiva (por ejemplo, alertas de seguridad basadas en CVEs, estados de salud y detección de EDR/XDR, alertas de Inteligencia de Ciberamenazas o CTI, etc). Sin embargo, la potencia de la automatización conlleva riesgos inherentes. No solo se abordará el cómo automatizar, sino también el cómo asegurar estos procesos. Discutiremos los principios de Secure by Design aplicados a la orquestación, analizando los riesgos de exposición de datos, la propagación de incidentes y la importancia de una gestión segura de credenciales y secretos. El objetivo es proporcionar un marco de referencia para construir un SOC no solo más autónomo, sino también más resiliente y confiable, donde la automatización sea una fortaleza y no un vector de ataque.",
+      bio: "Axel Amézquita, SOC Engineer T1, Delta Protect, Rodrigo Parra, SOC Engineer T1, Delta Protect",
+      twitter: "#",
+      linkedin: "#"
+    },
+    speaker4: {
+      name: "Andres Sabas",
+      talk: "Introduccion a Magstripe",
+      talkinfo: "Una charla donde exploramos cómo funcionan las bandas magnéticas en tarjetas tradicionales: su estructura, pistas, codificación de datos y por qué siguen siendo relevantes hoy en día. Se abordarán conceptos clave, ejemplos prácticos y fallos comunes que permiten ataques como clonación y manipulación, preparando el terreno para comprender tecnologías más modernas y sus vulnerabilidades.",
+      bio: "Andrés Sabas es Ingeniero en Electrónica, cofundador de Electronic Cats y promotor del hardware libre en Latinoamérica.",
+      twitter: "https://x.com/electronicats",
+      linkedin: "https://www.linkedin.com/in/andressabas/"
     }
+  };
 
-    @keyframes check {
-      0%   { color: #ff4081; text-shadow: 0 0 5px #ff4081; }
-      50%  { color: #40c4ff; text-shadow: 0 0 10px #40c4ff; }
-      100% { color: #69f0ae; text-shadow: 0 0 15px #69f0ae; }
+  function showSpeaker(key) {
+    const speaker = speakerData[key];
+    document.getElementById('modal-name').textContent = speaker.name;
+    document.getElementById('modal-talk').textContent = speaker.talk;
+    document.getElementById('modal-talkinfo').textContent = speaker.talkinfo;
+    document.getElementById('modal-talkinfo2').textContent = speaker.talkinfo2;
+    document.getElementById('modal-bio').textContent = speaker.bio;
+    document.getElementById('modal-twitter').href = speaker.twitter;
+    document.getElementById('modal-linkedin').href = speaker.linkedin;
+    document.getElementById('speaker-modal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('speaker-modal').style.display = 'none';
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById('speaker-modal');
+    if (event.target == modal) {
+      closeModal();
     }
-  </style>
+  }
+</script>
 
-<nav class="main-nav tone-dark">
-  <ul>
-    <li><a href="/">Home</a></li>
-
-    <li class="dropdown">
-      <a href="#">Events</a>
-      <ul class="dropdown-content">
-        <li><a href="/events/pwnedcon2025">Pwn3d!Con 2025</a></li>
-        <li><a href="/events/bugcon2025">Bugcon 2025</a></li>
-      </ul>
-    </li>
- <!--
-    <li><a href="/resources">Resources</a></li>
-
-    <li class="dropdown"><a href="#">Hardware</a></li>
-
-    <li><a href="/blog">Blog</a></li>
-
-    <li class="dropdown">
-      <a href="#">Get Involved</a>
-      <ul class="dropdown-content">
-        <li><a href="/contribute">Contribute</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </li>
-
-    <li class="search-icon">
-      <a href="/search"><i class="fa fa-search"></i></a>
-    </li>
-  </ul>
- -->
-</nav>
-
-<section class="tone-light" style="margin-top: 2rem; padding: 2rem 1rem;">
-  <div>
-    {{ site.data.info.description_long | markdownify }}
-
-    <img src="{{ site.baseurl }}/images/cfp_bugcon.jpeg" />
-    <br>
-    <span class="des"><a href="https://docs.google.com/forms/d/e/1FAIpQLSc6Jtp-mstRlFeTWKD4mvZX1vA1NdS1tueBBtMFtNgp27Ot8w/viewform"><h1>Aplica aqui!!!!</h1></a>
-    <br>
-
-  </section>
 {% if site.data.schedule %}
-  <section id="schedule">
+  <section id="schedule" style="text-align: left;>
     <h1>Schedule</h1>
     <div class="items-container">
       {% for part in site.data.schedule %}
@@ -88,6 +92,50 @@ permalink: /events/bugcon2025/
   </section>
 {% endif %}
 
+<section id="speakers">
+  <h2>Speakers</h2>
+  <div class="speakers-grid">
+    <!-- Speaker 1 -->
+    <div class="speaker-card" onclick="showSpeaker('speaker1')">
+      <img src="{{ site.baseurl }}/images/bugcon_speakers/cesar.jpg" alt="Cesar Calderon">
+      <p>Cesar Calderon</p>
+    </div>
+
+    <!-- Speaker 2 -->
+    <div class="speaker-card" onclick="showSpeaker('speaker2')">
+      <img src="{{ site.baseurl }}/images/bugcon_speakers/ivan.png" alt="Ivan Morales">
+      <p>Ivan Morales</p>
+    </div>
+
+    <!-- Speaker 3 -->
+    <div class="speaker-card" onclick="showSpeaker('speaker3')">
+      <img src="{{ site.baseurl }}/images/bugcon_speakers/speaker1.png" alt="Axel Amézquita, Rodrigo Parra">
+      <p>Axel Amézquita, Rodrigo Parra</p>
+    </div>
+
+    <!-- Speaker 4 -->
+    <div class="speaker-card" onclick="showSpeaker('speaker4')">
+      <img src="{{ site.baseurl }}/images/bugcon_speakers/sabas.jpg" alt="Andres Sabas">
+      <p>Andres Sabas</p>
+    </div>
+
+
+<!-- Modal Speaker Info -->
+<div id="speaker-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modal-name"></h3>
+    <p><strong>Charla:</strong> <span id="modal-talk"></span></p>
+    <p><strong>Sobre la sesion:</strong> <span id="modal-talkinfo"></span></p>
+    <p><strong>Sobre la sesion II:</strong> <span id="modal-talkinfo2"></span></p>
+    <p><strong>Informacion del ponente:</strong> <span id="modal-bio"></span></p>
+    <p>
+      <a href="#" id="modal-twitter" target="_blank">Twitter</a> |
+      <a href="#" id="modal-linkedin" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+</div>
+
 {% if site.data.faq %}
   <section>
     <h1 id="faq">F.A.Q.</h1>
@@ -101,7 +149,3 @@ permalink: /events/bugcon2025/
     </div>
   </section>
 {% endif %}
-
-<section class="tone-dark">
-  <p>Website template made with love by <a href="https://lauzhack.com">LauzHack</a>.</p>
-</section>

@@ -1,0 +1,24 @@
+- name: MagSpoof V5
+  description: MagSpoof V5 es la última versión actualizada del famoso dispositivo que puede leer (lector de tarjetas no incluido), suplantar y emular cualquier tarjeta de banda magnética o de crédito. Puede operar "inalámbricamente", incluso en lectores de tarjetas de banda magnética/tarjetas de crédito estándar, generando un potente campo electromagnético que emula una tarjeta de banda magnética tradicional.
+  image: https://electroniccats.com/wp-content/uploads/2024/05/02.Magspoof-V5.jpg
+  link: https://electroniccats.com/store/magspoof-v5/
+
+- name: Hunter Cat
+  description: Funciona detectando el número de cabezales de banda magnética dentro del lector de tarjetas. Proporciona información al usuario a través de LED en la misma placa Hunter Cat. El proceso de escaneo es simple. El usuario solo tiene que insertar y retirar el Hunter Cat normalmente antes de insertar la tarjeta bancaria. El Hunter tardará un segundo en procesar la información y dará el estado de lectura con tres LED diferentes -> Ok, Advertencia y Peligroso. Con esta información, el usuario puede o no continuar dependiendo de los LED de alerta..
+  image: https://electroniccats.com/wp-content/uploads/2023/10/01_Hunter-Cat_Clasica.jpg
+  link: https://electroniccats.com/store/hunter-cat-2/
+
+- name: BomberCat
+  description: Herramienta de seguridad que combina las tecnologías de tarjetas más comunes la tecnología NFC (Comunicación de Campo Cercano) y la tecnología de banda magnética utilizada en el control de acceso, identificación y tarjetas bancarias. Creada especialmente para auditar terminales bancarios e identificar lectores NFC y herramientas de sniffing, con esta herramienta puedes auditar.
+  image: https://electroniccats.com/wp-content/uploads/2022/08/04.BOMBERCAT-V1.3-360x432.jpg
+  link: https://electroniccats.com/store/bombercat/
+
+- name: Flipper Zero
+  description: Multiherramienta de hardware para hacking, con soporte para RFID, IR, GPIO y más.
+  image: https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Flipper_Zero.jpg/1200px-Flipper_Zero.jpg
+  link: https://flipperzero.one/
+
+#- name: Example
+#  description: Example
+#  image: Example
+#  link: Example

@@ -1,0 +1,26 @@
+---
+layout: default
+title: Hardware
+permalink: /hardware/
+---
+
+<h1>Hardware Recomendado</h1>
+<p>Una colección de dispositivos recomendados para investigación, pruebas y aprendizaje en seguridad de sistemas de pagos.</p>
+
+<div class="hardware-grid">
+  {% assign items = site.data.hardware %}
+  {% for item in items %}
+    <div class="hardware-card">
+      {% if item.image %}
+        <img src="{{ item.image }}" alt="{{ item.name }}">
+      {% endif %}
+      <div class="hardware-content">
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+        {% if item.link %}
+          <a href="{{ item.link }}" target="_blank" class="btn">Ver más →</a>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

@@ -1,16 +1,15 @@
 ---
 layout: compress
-
 ---
+
 {% assign title = site.data.info.name %}
 {% if page.title %}
   {% assign title = title | append: ' - ' | append: page.title %}
 {% endif %}
-{% comment %} Stupid hack because front matter can't contain variables,
-              and page.url can be overriden so we can't test for it {% endcomment %}
 {% if page.is_workshops %}
   {% assign title = site.data.workshops.name %}
 {% endif %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +19,6 @@ layout: compress
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ title }}">
-  <meta property="og:image" content="{{ site.url }}/images/preview.png">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:description" content="{{ site.data.info.description_short }}">
 
@@ -33,12 +31,44 @@ layout: compress
   {% endif %}
 
   <title>{{ title }}</title>
-
   <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
-
   <link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16">
 </head>
 <body>
-  {{ content }}
+
+  <!-- NAVBAR -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="{{ site.baseurl }}/">Home</a></li>
+      <li>
+        <a href="#">Eventos ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="{{ site.baseurl }}/events/bugcon2025/">Bugcon 2025</a></li>
+          <li><a href="{{ site.baseurl }}/events/tropicon2026/">Tropicon 2026</a></li>
+          <li>
+            <a href="#">Past Events ▾</a>
+            <ul class="dropdown-content">
+              <li><a href="{{ site.baseurl }}/events/pwnedcon2025/">Pwnedcon 2025</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+      <li><a href="{{ site.baseurl }}/hardware">Hardware</a></li>
+        <li>
+        <a href="#">Involucrate ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="{{ site.baseurl }}/get-involve/">Como ser miembro</a></li>
+          <li><a href="{{ site.baseurl }}/sponsors">Sponsors</a></li>
+       	</ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    {{ content }}
+  </main>
+
 </body>
 </html>

@@ -1,0 +1,120 @@
+---
+layout: default
+title: TROPICON 2026
+permalink: /events/tropicon2026/
+---
+
+<section class="tone-hacker" style="text-align: left; padding: 1.5rem; font-family: 'Courier New', monospace; border-radius: 12px;">
+  <div>
+    <h2 style="color:#22d3ee; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem; margin-bottom: 1rem;">
+      🔐 La Meche de los Payments at TROPICON
+    </h2>
+    <p >
+      Durante el evento estaremos desarrollando una villa temática orientada a sistemas de pago, con el objetivo de mostrar de forma práctica y didáctica cómo funcionan las tecnologías detrás de los métodos de pago más usados y, al mismo tiempo, las vulnerabilidades más comunes que suelen explotarse.
+    </p>
+
+    <p >A continuación, un adelanto de lo que podrás encontrar:</p>
+
+    <h3 style="color:#a855f7; margin-top: 1.5rem;">🐐 PAYGoat</h3>
+    <p >
+      Una plataforma creada por el equipo para mostrar de forma sencilla las vulnerabilidades más comunes a nivel de lógica de negocio en aplicaciones financieras.  
+      El escenario busca enseñar cómo pequeños descuidos en la validación pueden convertirse en grandes riesgos.
+    </p>
+
+    <h3 style="color:#a855f7; margin-top: 1.5rem;">📡 NFC y RFID</h3>
+    <p >Con el uso de hardware especializado aprenderás a:</p>
+    <ul >
+      <li>Leer tarjetas contactless.</li>
+      <li>Simular tarjetas.</li>
+      <li>Explorar información sobre ataques como <em>replay</em> y otros comportamientos llamativos.</li>
+    </ul>
+
+    <h3 style="color:#a855f7; margin-top: 1.5rem;">🏴‍☠️ CTF de Sistemas de Pago y Seguridad en Aplicaciones</h3>
+    <p >
+      Además del contenido que se estara mostrando en el espacio, se llevará a cabo un Capture The Flag (CTF) inspirado en escenarios reales, donde los participantes pondrán a prueba sus conocimientos en distintas áreas:
+    </p>
+
+    <h4 style="color:#f472b6; margin-top: 1rem;">🔐 Temáticas principales del CTF</h4>
+    <ul >
+      <li>Aplicaciones móviles mPOS</li>
+      <li>Web y lógica de negocio</li>
+    </ul>
+
+    <h4 style="color:#f472b6; margin-top: 1rem;">🎯 Objetivo</h4>
+    <p >
+      El CTF está diseñado para que tanto principiantes como expertos puedan aprender, experimentar y divertirse explorando cómo se ven en la práctica las fallas más comunes en estos entornos.
+
+	<p style="margin-top: 1.5rem; color:#22d3ee;">
+	  ⚡ Requisitos para participar:
+	</p>
+	<ul margin-top: 0.5rem;">
+	  <li>Llenar formulario en el stand para recibir más información sobre los retos</li>
+	  <li>Celular con NFC</li>
+	  <li>Burpsuite</li>
+	  <li>Y... muchas ganas de reventar el mundo</li>
+	</ul>
+	<p margin-top: 0.5rem;">
+	  <b>Para poder optar a los premios</b> deben estar presencialmente en el evento y únicamente para el público de la conferencia.  
+	</p>
+    <p style="margin-top: 1.5rem; >
+      ⚡ Prepárate para retar tus conocimientos y descubrir nuevas formas de pensar en seguridad aplicada a los sistemas de pago.
+    </p>
+  	<br />
+  	<br />
+   </p>
+    
+  </div>
+</section>
+
+{% if site.data.sponsors %}
+  <section class="section-sponsors">
+ 
+    {% for tier in site.data.sponsors.tiers %}
+      {% if tier[1].show_title %}
+        <h1>{{ tier[0] }}</h1>
+      {% endif %}
+
+      {% if tier[1].sponsors %}
+        <div class="items-container"
+             {% if tier[1].color %} style="background: {{ tier[1].color }}" {% endif %}>
+          {% for sponsor in tier[1].sponsors %}
+            {% comment %} Use SVG if available, PNG otherwise {% endcomment %}
+            {% assign file_img = 'null' %}
+            {% assign file_svg_path = sponsor[0] | prepend: '/images/logos/' | append: '.svg' %}
+            {% for file in site.static_files %}
+              {% if file.path == file_svg_path %}
+                {% assign file_img = file_svg_path %}
+              {% endif %}
+            {% endfor %}
+            {% if file_img == 'null' %}
+              {% assign file_img = sponsor[0] | prepend: '/images/logos/' | append: '.png' %}
+            {% endif %}
+
+            <div class="item-large">
+              <a href="{{ sponsor[1] }}"
+                 rel="noreferrer">
+                 <img src="{{ file_img }}"
+                      alt="{{ tier[0] }} - {{ sponsor[0] }}"
+                      style="height: {{ tier[1].size }}vh">
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </section>
+{% endif %}
+
+{% if site.data.faqtropicon%}
+  <section>
+    <h1 id="faq">F.A.Q.</h1>
+    <div class="items-container">
+      {% for item in site.data.faqpnwed %}
+        <div class="item-large">
+          <h2 {% if item.id %} id="{{ item.id }}" {% endif %}>{{ item.q }}</h2>
+          <p>{{ item.a | markdownify }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
